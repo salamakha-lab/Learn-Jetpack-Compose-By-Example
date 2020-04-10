@@ -46,17 +46,33 @@ class ConstraintLayoutActivity: AppCompatActivity() {
                 Column {
                     // Title Component is a custom composable that we created which is capable of
                     // rendering text on the screen in a certain font style & text size.
-                    TitleComponent("Simple constraint layout example")
-                    SimpleConstraintLayoutComponent()
+                    Box{
+                        TitleComponent("Simple constraint layout example")
+                    }
+                    Box{
+                        SimpleConstraintLayoutComponent()
+                    }
 
-                    TitleComponent("Constraint layout example with guidelines")
-                    GuidelineConstraintLayoutComponent()
+                    Box{
+                        TitleComponent("Constraint layout example with guidelines")
+                    }
+                    Box{
+                        GuidelineConstraintLayoutComponent()
+                    }
 
-                    TitleComponent("Constraint layout example with barriers")
-                    BarrierConstraintLayoutComponent()
+                    Box{
+                        TitleComponent("Constraint layout example with barriers")
+                    }
+                    Box{
+                        BarrierConstraintLayoutComponent()
+                    }
 
-                    TitleComponent("Constraint layout example with bias")
-                    BiasConstraintLayoutComponent()
+                    Box{
+                        TitleComponent("Constraint layout example with bias")
+                    }
+                    Box{
+                        BiasConstraintLayoutComponent()
+                    }
                 }
             }
         }
