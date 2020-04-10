@@ -134,15 +134,26 @@ fun ImageWithRoundedCorners(@DrawableRes resId: Int) {
         // used to modify the composable that its applied to. In this example, we configure the
         // Box composable to have a height of 200dp, width of 200dp, alignment as center
         // and a custom draw modifier to clip the corners of the image.
-        Box(
-            modifier = Modifier.wrapContentSize(Alignment.Center) +
-                    Modifier.preferredHeight(200.dp) + Modifier.preferredWidth(200.dp)
-                    + RoundedCornerClipModifier(
-                shape.topLeft, shape.topRight, shape.bottomLeft, shape.bottomRight
-            )
-        ) {
+        //Box(
+        //    modifier = Modifier.wrapContentSize(Alignment.Center) +
+        //            Modifier.preferredHeight(200.dp) + Modifier.preferredWidth(200.dp)
+        //            + RoundedCornerClipModifier(
+        //        shape.topLeft, shape.topRight, shape.bottomLeft, shape.bottomRight
+        //    )
+        
+        //) {
             // Image is a pre-defined composable that lays out and draws a given [ImageAsset].
-            Image(it)
+        //    Image(it)
+        //}
+         Box(modifier = Modifier.fillMaxWidth(), gravity = ContentGravity.Center) {
+            Box(
+                modifier = Modifier.preferredSize(200.dp).clip(shape = shape),
+                children = {
+                    Image(
+                        asset = it
+                    )
+                }
+            )
         }
     }
 }
